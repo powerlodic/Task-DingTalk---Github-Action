@@ -1,0 +1,93 @@
+﻿<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task DingTalk Scheduler</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Task DingTalk Scheduler</h1>
+      <p>Upload Schedule TS, sync ke kalender, kirim otomatis ke DingTalk jam {{ daily_time }}.</p>
+    </div>
+    <div class="status {{ 'ready' if dingtalk_ready else 'missing' }}">
+      {{ 'DingTalk ready' if dingtalk_ready else 'Webhook belum diisi' }}
+    </div>
+  </header>
+
+  <main>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <section class="messages">
+          {% for category, message in messages %}
+            <div class="message {{ category }}">{{ message }}</div>
+          {% endfor %}
+        </section>
+      {% endif %}
+    {% endwith %}
+
+    <section class="toolbar">
+      <form action="{{ url_for('upload_schedule') }}" method="post" enctype="multipart/form-data">
+        <input type="file" name="schedule_file" accept=".csv,.xlsx,.xlsm" required>
+        <button type="submit">Upload & Sync</button>
+      </form>
+      <form action="{{ url_for('send_today') }}" method="post">
+        <button type="submit">Kirim Hari Ini</button>
+      </form>
+      <form action="{{ url_for('send_test') }}" method="post">
+        <button type="submit">Test DingTalk</button>
+      </form>
+      <form action="{{ url_for('sync_holidays_now') }}" method="post">
+        <button type="submit">Sync Libur</button>
+      </form>
+      <form action="{{ url_for('reset_schedule') }}" method="post">
+        <button class="danger" type="submit">Reset</button>
+      </form>
+    </section>
+
+    <section class="calendar-shell">
+      <div class="calendar-title">
+        <h2>{{ calendar_title }}</h2>
+        <span>{{ events|length }} event</span>
+      </div>
+      <div class="calendar-grid header">
+        <div>Senin</div>
+        <div>Selasa</div>
+        <div>Rabu</div>
+        <div>Kamis</div>
+        <div>Jumat</div>
+        <div>Sabtu</div>
+        <div>Minggu</div>
+      </div>
+      <div class="calendar-grid">
+        {% for week in calendar_weeks %}
+          {% for day in week %}
+            {% if day %}
+              <article class="day">
+                <h3>{{ day.day }}</h3>
+                {% if holidays.get(day.date) %}
+                  <div class="holiday">{{ holiday_label(holidays.get(day.date)) }}</div>
+                {% endif %}
+                {% for event in day.events %}
+                  <div class="event {{ 'off' if event['task_code']|lower == 'off' else '' }}" {% if event['color'] %}style="border-left-color: #{{ event['color'] }}"{% endif %}>
+                    <div class="event-time">{{ event['start_time'] or daily_time }}</div>
+                    <div>
+                      <strong>{{ event['person'] }}</strong>
+                      <span>{{ event['task_code'] }}</span>
+                      <p>{{ event['description'] }}</p>
+                    </div>
+                  </div>
+                {% endfor %}
+              </article>
+            {% else %}
+              <div class="day muted"></div>
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      </div>
+    </section>
+  </main>
+</body>
+</html>

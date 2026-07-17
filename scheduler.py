@@ -1,0 +1,28 @@
+from __future__ import annotations
+
+import logging
+
+from config import Config
+from models import init_db
+from services import (
+    send_daily_summary,
+    send_due_event_reminders,
+    sync_default_holidays,
+)
+
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s %(levelname)s %(name)s: %(message)s",
+)
+
+
+def main() -> None:
+    init_db(Config.DATABASE_PATH)
+    sync_default_holidays()
+    send_daily_summary()
+    send_due_event_reminders()
+
+
+if __name__ == "__main__":
+    main()
