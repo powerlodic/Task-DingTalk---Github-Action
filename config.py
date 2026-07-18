@@ -22,6 +22,8 @@ class Config:
     SECRET_KEY = os.getenv("FLASK_SECRET_KEY", "dev-secret")
     DATABASE_PATH = os.getenv("DATABASE_PATH", "scheduler.sqlite3")
     UPLOAD_FOLDER = os.getenv("UPLOAD_FOLDER", "uploads")
+    SCHEDULE_FILE = os.getenv("SCHEDULE_FILE", "uploads/Schedule.xlsx")
+    MAX_CONTENT_LENGTH = int(os.getenv("MAX_UPLOAD_MB", "16")) * 1024 * 1024
     TIMEZONE = os.getenv("APP_TIMEZONE", "Asia/Jakarta")
     DAILY_NOTIFY_TIME = os.getenv("DAILY_NOTIFY_TIME", "04:00")
     REMINDER_LOOKAHEAD_MINUTES = int(os.getenv("REMINDER_LOOKAHEAD_MINUTES", "1"))
@@ -33,4 +35,3 @@ class Config:
         "HOLIDAY_SYNC_URL_TEMPLATE",
         "https://api-hari-libur.vercel.app/api?year={year}",
     )
-    HOLIDAY_SYNC_TIME = os.getenv("HOLIDAY_SYNC_TIME", "02:30")

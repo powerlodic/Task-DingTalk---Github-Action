@@ -1,0 +1,10 @@
+name = "task-dingtalk-scheduler-upload"
+main = "worker/index.js"
+compatibility_date = "2026-07-18"
+
+[vars]
+GITHUB_OWNER = "powerlodic"
+GITHUB_REPO = "Task-DingTalk---Github-Action"
+GITHUB_BRANCH = "main"
+ALLOWED_ORIGIN = "https://powerlodic.github.io"
+DINGTALK_CONFIGURED = "true"

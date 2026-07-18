@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task DingTalk Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar glass">
+      <div class="brand">
+        <span class="brand-mark">TD</span>
+        <div>
+          <strong>Task DingTalk</strong>
+          <small>Schedule Control</small>
+        </div>
+      </div>
+    </aside>
+
+    <main>
+      <header class="hero glass">
+        <div>
+          <p class="eyebrow">GitHub Pages Dashboard</p>
+          <h1>Schedule upload without local Flask</h1>
+          <p class="hero-copy">Upload Excel or CSV, commit it through Cloudflare Worker, and let GitHub Actions rebuild the schedule for DingTalk.</p>
+        </div>
+        <button id="themeToggle" class="icon-button" type="button" aria-label="Toggle dark mode">◐</button>
+      </header>
+
+      <section id="status" class="status-grid">
+        <article class="status-card glass">
+          <span class="status-dot pending" id="githubDot"></span>
+          <div>
+            <small>GitHub Connection</small>
+            <strong id="githubStatus">Checking...</strong>
+          </div>
+        </article>
+        <article class="status-card glass">
+          <span class="status-dot pending" id="schedulerDot"></span>
+          <div>
+            <small>Scheduler Status</small>
+            <strong id="schedulerStatus">Checking...</strong>
+          </div>
+        </article>
+        <article class="status-card glass">
+          <span class="status-dot pending" id="dingtalkDot"></span>
+          <div>
+            <small>DingTalk Status</small>
+            <strong id="dingtalkStatus">Checking...</strong>
+          </div>
+        </article>
+        <article class="status-card glass">
+          <span class="status-dot ready"></span>
+          <div>
+            <small>Last Upload Time</small>
+            <strong id="lastUpload">Never</strong>
+          </div>
+        </article>
+      </section>
+
+      <section id="upload" class="panel-grid">
+        <article class="upload-panel glass">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Schedule File</p>
+              <h2>Upload Excel or CSV</h2>
+            </div>
+            <span class="limit">Max 10 MB</span>
+          </div>
+
+          <label class="endpoint-field">
+            <span>Cloudflare Worker URL</span>
+            <input id="workerUrl" type="url" placeholder="https://your-worker.workers.dev">
+          </label>
+
+          <div id="dropZone" class="drop-zone">
+            <input id="fileInput" type="file" accept=".xlsx,.csv">
+            <div class="drop-icon">⇧</div>
+            <strong>Drop Schedule.xlsx or Schedule.csv here</strong>
+            <span>or click to browse</span>
+          </div>
+
+          <div class="file-preview" id="filePreview">
+            <div>
+              <small>Selected File</small>
+              <strong id="fileName">No file selected</strong>
+              <span id="fileMeta">CSV and XLSX are supported</span>
+            </div>
+            <button id="clearFile" type="button">Clear</button>
+          </div>
+
+          <div class="progress-track">
+            <div id="progressBar"></div>
+          </div>
+
+          <div class="actions">
+            <button id="uploadButton" class="primary" type="button">
+              <span class="spinner" id="uploadSpinner"></span>
+              Upload Schedule
+            </button>
+            <button id="runScheduler" type="button">Manual Run Scheduler</button>
+          </div>
+        </article>
+
+        <article id="stats" class="stats-panel glass">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Statistics</p>
+              <h2>Schedule Snapshot</h2>
+            </div>
+          </div>
+          <div class="stats-grid">
+            <div class="stat">
+              <small>Total Engineer</small>
+              <strong id="totalEngineer">0</strong>
+            </div>
+            <div class="stat">
+              <small>Total Events</small>
+              <strong id="totalEvents">0</strong>
+            </div>
+            <div class="stat">
+              <small>Month</small>
+              <strong id="scheduleMonth">-</strong>
+            </div>
+            <div class="stat">
+              <small>Year</small>
+              <strong id="scheduleYear">-</strong>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section id="calendar" class="calendar-panel glass">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Calendar Preview</p>
+            <h2 id="calendarTitle">Waiting for file</h2>
+          </div>
+          <span id="previewHint">CSV preview is automatic. XLSX preview appears after GitHub Actions rebuilds data.</span>
+        </div>
+        <div class="calendar-weekdays">
+          <span>Senin</span>
+          <span>Selasa</span>
+          <span>Rabu</span>
+          <span>Kamis</span>
+          <span>Jumat</span>
+          <span>Sabtu</span>
+          <span>Minggu</span>
+        </div>
+        <div id="calendarGrid" class="calendar-grid"></div>
+      </section>
+    </main>
+  </div>
+
+  <div id="toastHost" class="toast-host"></div>
+  <script src="app.js"></script>
+</body>
+</html>

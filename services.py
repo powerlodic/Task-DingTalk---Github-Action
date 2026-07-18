@@ -11,7 +11,7 @@ import pytz
 from config import Config
 from dingtalk import DingTalkClient
 from holidays_id import holiday_label, load_holidays, sync_holidays
-from models import get_events_for_date, get_pending_events, mark_event_sent
+from repository import get_events_for_date, get_pending_events, mark_event_sent
 
 
 logger = logging.getLogger(__name__)
@@ -95,10 +95,7 @@ def sync_holiday_years(years: list[int]) -> int:
 
 def sync_default_holidays() -> None:
     now = local_now()
-    try:
-        sync_holiday_years([now.year, now.year + 1])
-    except Exception:
-        logger.exception("Holiday sync failed")
+    sync_holiday_years([now.year, now.year + 1])
 
 
 def task_sort_key(task_code: str) -> tuple[int, int, str]:

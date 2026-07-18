@@ -62,7 +62,10 @@ def sync_holidays(
             by_date_name[(item["date"], item["name"])] = item
             synced_count += 1
 
-    output = sorted(by_date_name.values(), key=lambda item: (item["date"], item["name"]))
+    output = sorted(
+        by_date_name.values(),
+        key=lambda item: (item["date"], item["name"]),
+    )
     _write_holiday_items(file_path, output)
     return synced_count
 

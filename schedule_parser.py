@@ -26,6 +26,7 @@ MONTHS_ID = {
 
 TIME_PATTERN = re.compile(r"\b([01]?\d|2[0-3])[:.]([0-5]\d)\b")
 TASK_SPLIT_PATTERN = re.compile(r"\s*(?:,|/|\+|\n|;)\s*")
+SPECIAL_TASK_CODES = {"duty", "off"}
 
 
 @dataclass(frozen=True)
@@ -36,7 +37,10 @@ class ParsedSchedule:
     year: int
 
 
-def parse_schedule_csv(path: str | Path, default_start_time: str = "08:00") -> ParsedSchedule:
+def parse_schedule_csv(
+    path: str | Path,
+    default_start_time: str = "08:00",
+) -> ParsedSchedule:
     rows = _read_csv(path)
     month, year = _detect_month_year(rows)
     tasks = _extract_tasks(rows)
@@ -44,7 +48,10 @@ def parse_schedule_csv(path: str | Path, default_start_time: str = "08:00") -> P
     return ParsedSchedule(events=events, tasks=tasks, month=month, year=year)
 
 
-def parse_schedule_file(path: str | Path, default_start_time: str = "08:00") -> ParsedSchedule:
+def parse_schedule_file(
+    path: str | Path,
+    default_start_time: str = "08:00",
+) -> ParsedSchedule:
     path = Path(path)
     if path.suffix.lower() == ".csv":
         return parse_schedule_csv(path, default_start_time)
@@ -53,7 +60,10 @@ def parse_schedule_file(path: str | Path, default_start_time: str = "08:00") -> 
     raise ValueError("Format file belum didukung. Gunakan .csv atau .xlsx.")
 
 
-def parse_schedule_xlsx(path: str | Path, default_start_time: str = "08:00") -> ParsedSchedule:
+def parse_schedule_xlsx(
+    path: str | Path,
+    default_start_time: str = "08:00",
+) -> ParsedSchedule:
     workbook = load_workbook(path, data_only=True)
     sheet = workbook.active
     rows = _worksheet_values(sheet)
@@ -95,7 +105,7 @@ def _extract_tasks(rows: list[list[str]]) -> dict[str, dict]:
         if not row or not row[0]:
             continue
         code = row[0].strip()
-        if code.lower().startswith("task") or code.lower() in {"duty", "off"}:
+        if _is_task_code(code):
             tasks[code] = {
                 "description": _cell(row, 1) or code,
                 "capacity": _last_non_empty(row[2:-1]),
@@ -109,12 +119,19 @@ def _extract_xlsx_tasks(sheet) -> dict[str, dict]:
     for row in sheet.iter_rows():
         for index, cell in enumerate(row):
             code = _to_text(cell.value)
-            if not (code.lower().startswith("task") or code.lower() in {"duty", "off"}):
+            if not _is_task_code(code):
                 continue
             description_cell = row[index + 1] if index + 1 < len(row) else None
+            description = (
+                _to_text(description_cell.value)
+                if description_cell and description_cell.value is not None
+                else code
+            )
             tasks[code] = {
-                "description": _to_text(description_cell.value) if description_cell and description_cell.value is not None else code,
-                "capacity": _last_non_empty([_to_text(item.value) for item in row[index + 2:-1]]),
+                "description": description,
+                "capacity": _last_non_empty(
+                    [_to_text(item.value) for item in row[index + 2:-1]]
+                ),
                 "duration": _last_non_empty([_to_text(item.value) for item in row]),
                 "color": _cell_fill_rgb(cell),
             }
@@ -138,7 +155,9 @@ def _extract_events(
             continue
 
         date_row_index = row_index + 1
-        while date_row_index < len(rows) and not _row_has_day_numbers(rows[date_row_index]):
+        while date_row_index < len(rows) and not _row_has_day_numbers(
+            rows[date_row_index]
+        ):
             date_row_index += 1
         if date_row_index >= len(rows):
             break
@@ -149,7 +168,7 @@ def _extract_events(
             data_row = rows[data_index]
             first = _cell(data_row, 0).lower()
             second = _cell(data_row, 1)
-            if first == "no" or first.startswith("task") or first in {"duty", "off"}:
+            if first == "no" or _is_task_code(first):
                 break
             if first.isdigit() and second:
                 person = second
@@ -192,7 +211,10 @@ def _extract_xlsx_events(
             continue
 
         date_row_index = row_index + 1
-        while date_row_index <= sheet.max_row and not _xlsx_row_has_day_numbers(sheet, date_row_index):
+        while date_row_index <= sheet.max_row and not _xlsx_row_has_day_numbers(
+            sheet,
+            date_row_index,
+        ):
             date_row_index += 1
         if date_row_index > sheet.max_row:
             break
@@ -203,14 +225,19 @@ def _extract_xlsx_events(
             first_cell = _to_text(sheet.cell(data_index, 2).value)
             person = _to_text(sheet.cell(data_index, 3).value)
             first_lower = first_cell.lower()
-            if first_lower == "no" or first_lower.startswith("task") or first_lower in {"duty", "off"}:
+            if first_lower == "no" or _is_task_code(first_lower):
                 break
             if first_cell.isdigit() and person:
                 for col, day in day_by_col.items():
                     cell = sheet.cell(data_index, col)
                     raw_value = _to_text(cell.value)
                     fill_color = _cell_fill_rgb(cell)
-                    task_code = _task_code_from_cell(raw_value, fill_color, tasks, color_to_task)
+                    task_code = _task_code_from_cell(
+                        raw_value,
+                        fill_color,
+                        tasks,
+                        color_to_task,
+                    )
                     if task_code:
                         events.append(
                             _event_from_task(
@@ -316,6 +343,11 @@ def _canonical_task_code(value: str, tasks: dict[str, dict]) -> str:
     if normalized == "off":
         return "Off"
     return value.strip()
+
+
+def _is_task_code(value: str) -> bool:
+    lowered = value.lower()
+    return lowered.startswith("task") or lowered in SPECIAL_TASK_CODES
 
 
 def _extract_time(value: str) -> str | None:
