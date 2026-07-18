@@ -13,9 +13,7 @@ def connect(database_path: str) -> sqlite3.Connection:
 
 
 def init_db(database_path: str) -> None:
-    database_dir = Path(database_path).parent
-    if database_dir != Path("."):
-        database_dir.mkdir(parents=True, exist_ok=True)
+    Path(database_path).parent.mkdir(parents=True, exist_ok=True) if Path(database_path).parent != Path(".") else None
     with connect(database_path) as conn:
         conn.executescript(
             """
@@ -41,8 +39,7 @@ def init_db(database_path: str) -> None:
             );
 
             CREATE INDEX IF NOT EXISTS idx_schedule_date ON schedule_events(date);
-            CREATE INDEX IF NOT EXISTS idx_schedule_starts_at
-                ON schedule_events(starts_at);
+            CREATE INDEX IF NOT EXISTS idx_schedule_starts_at ON schedule_events(starts_at);
 
             CREATE TABLE IF NOT EXISTS schedule_meta (
                 key TEXT PRIMARY KEY,
@@ -54,16 +51,8 @@ def init_db(database_path: str) -> None:
         _ensure_column(conn, "schedule_events", "color", "TEXT")
 
 
-def _ensure_column(
-    conn: sqlite3.Connection,
-    table: str,
-    column: str,
-    definition: str,
-) -> None:
-    columns = [
-        row["name"]
-        for row in conn.execute(f"PRAGMA table_info({table})").fetchall()
-    ]
+def _ensure_column(conn: sqlite3.Connection, table: str, column: str, definition: str) -> None:
+    columns = [row["name"] for row in conn.execute(f"PRAGMA table_info({table})").fetchall()]
     if column not in columns:
         conn.execute(f"ALTER TABLE {table} ADD COLUMN {column} {definition}")
 
@@ -82,10 +71,7 @@ def replace_schedule(
         conn.execute("DELETE FROM schedule_meta")
 
         conn.executemany(
-            """
-            INSERT INTO tasks (code, description, capacity, duration, color)
-            VALUES (?, ?, ?, ?, ?)
-            """,
+            "INSERT INTO tasks (code, description, capacity, duration, color) VALUES (?, ?, ?, ?, ?)",
             [
                 (
                     code,
@@ -100,27 +86,9 @@ def replace_schedule(
         conn.executemany(
             """
             INSERT INTO schedule_events
-                (
-                    person,
-                    date,
-                    start_time,
-                    starts_at,
-                    task_code,
-                    description,
-                    raw_value,
-                    color
-                )
+                (person, date, start_time, starts_at, task_code, description, raw_value, color)
             VALUES
-                (
-                    :person,
-                    :date,
-                    :start_time,
-                    :starts_at,
-                    :task_code,
-                    :description,
-                    :raw_value,
-                    :color
-                )
+                (:person, :date, :start_time, :starts_at, :task_code, :description, :raw_value, :color)
             """,
             list(events),
         )
@@ -171,11 +139,7 @@ def build_month_calendar(
             [
                 None
                 if day.month != month
-                else {
-                    "date": day.isoformat(),
-                    "day": day.day,
-                    "events": grouped.get(day.isoformat(), []),
-                }
+                else {"date": day.isoformat(), "day": day.day, "events": grouped.get(day.isoformat(), [])}
                 for day in week
             ]
         )
@@ -195,11 +159,7 @@ def get_events_for_date(database_path: str, date_text: str) -> list[sqlite3.Row]
         ).fetchall()
 
 
-def get_pending_events(
-    database_path: str,
-    start_iso: str,
-    end_iso: str,
-) -> list[sqlite3.Row]:
+def get_pending_events(database_path: str, start_iso: str, end_iso: str) -> list[sqlite3.Row]:
     init_db(database_path)
     with connect(database_path) as conn:
         return conn.execute(

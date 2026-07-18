@@ -1,11 +1,6 @@
-# Task DingTalk
+# Task DingTalk Scheduler
 
-Aplikasi Python untuk upload file `Schedule TS` `.csv` atau `.xlsx`, menampilkan hasilnya sebagai kalender, lalu mengirim jadwal on duty ke DingTalk melalui incoming robot webhook.
-
-Proyek ini punya dua entry point:
-
-- `app.py` menjalankan dashboard Flask lokal.
-- `scheduler.py` dijalankan GitHub Actions untuk sync libur dan mengirim notifikasi.
+Aplikasi Python untuk upload file `Schedule TS` `.csv` atau `.xlsx`, menampilkan hasilnya sebagai kalender, lalu mengirim jadwal on duty otomatis ke DingTalk melalui incoming robot webhook.
 
 ## Setup
 
@@ -35,7 +30,7 @@ http://127.0.0.1:5000
 1. Upload file `Schedule TS`.
 2. Aplikasi parse blok mingguan, nama engineer, tanggal, dan isi cell task. Untuk `.xlsx`, warna cell jadwal otomatis dicocokkan dengan warna legenda task.
 3. Kalender dashboard otomatis sama dengan isi file.
-4. GitHub Actions menjalankan `python scheduler.py` pada hari kerja untuk mengirim summary jadwal hari ini ke DingTalk.
+4. Scheduler mengirim summary jadwal hari ini ke DingTalk setiap hari sesuai `DAILY_NOTIFY_TIME`.
 5. Event yang punya jam eksplisit, misalnya `Task 1 13:30`, juga akan dikirim saat waktunya mendekat.
 6. Kalender libur nasional/cuti bersama dibaca dari `HOLIDAY_FILE` dan ditampilkan di dashboard serta pesan DingTalk.
 
@@ -71,19 +66,7 @@ Auto-sync libur bisa dikontrol dari `.env`:
 ```text
 HOLIDAY_SYNC_ENABLED=true
 HOLIDAY_SYNC_URL_TEMPLATE=https://api-hari-libur.vercel.app/api?year={year}
+HOLIDAY_SYNC_TIME=02:30
 ```
 
-Aplikasi akan mencoba sync saat `scheduler.py` dijalankan GitHub Actions, saat upload schedule, dan lewat tombol `Sync Libur` di dashboard. Jika sync gagal, data lokal terakhir tetap dipakai.
-
-## GitHub Actions
-
-Workflow ada di `.github/workflows/dingtalk.yml`.
-
-Tambahkan repository secrets:
-
-```text
-DINGTALK_WEBHOOK_URL
-DINGTALK_SECRET
-```
-
-`DINGTALK_SECRET` boleh kosong jika robot DingTalk tidak memakai signature. Workflow bisa dijalankan manual lewat `workflow_dispatch`.
+Aplikasi akan mencoba sync saat start, setiap hari pada `HOLIDAY_SYNC_TIME`, saat upload schedule, dan lewat tombol `Sync Libur` di dashboard. Jika sync gagal, data lokal terakhir tetap dipakai.

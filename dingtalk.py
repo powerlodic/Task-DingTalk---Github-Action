@@ -4,8 +4,8 @@ import base64
 import hashlib
 import hmac
 import time
-from collections.abc import Mapping
 from dataclasses import dataclass
+from typing import Mapping
 from urllib.parse import quote_plus
 
 import requests
@@ -21,14 +21,11 @@ class DingTalkClient:
     secret: str = ""
 
     @classmethod
-    def from_app_config(cls, config: Mapping[str, object]) -> "DingTalkClient":
-        webhook_url = str(config.get("DINGTALK_WEBHOOK_URL") or "")
+    def from_app_config(cls, config: Mapping[str, str]) -> "DingTalkClient":
+        webhook_url = config.get("DINGTALK_WEBHOOK_URL", "")
         if not webhook_url:
             raise DingTalkConfigError("DINGTALK_WEBHOOK_URL belum diisi di .env.")
-        return cls(
-            webhook_url=webhook_url,
-            secret=str(config.get("DINGTALK_SECRET") or ""),
-        )
+        return cls(webhook_url=webhook_url, secret=config.get("DINGTALK_SECRET", ""))
 
     def signed_url(self) -> str:
         if not self.secret:
@@ -41,10 +38,7 @@ class DingTalkClient:
             hmac.new(secret, string_to_sign, digestmod=hashlib.sha256).digest()
         ).decode("utf-8")
         separator = "&" if "?" in self.webhook_url else "?"
-        return (
-            f"{self.webhook_url}{separator}"
-            f"timestamp={timestamp}&sign={quote_plus(signature)}"
-        )
+        return f"{self.webhook_url}{separator}timestamp={timestamp}&sign={quote_plus(signature)}"
 
     def send_text(self, content: str) -> None:
         self._post({"msgtype": "text", "text": {"content": content}})
@@ -57,6 +51,4 @@ class DingTalkClient:
         response.raise_for_status()
         data = response.json()
         if data.get("errcode") != 0:
-            raise RuntimeError(
-                f"DingTalk error {data.get('errcode')}: {data.get('errmsg')}"
-            )
+            raise RuntimeError(f"DingTalk error {data.get('errcode')}: {data.get('errmsg')}")
