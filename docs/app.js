@@ -168,7 +168,7 @@ async function uploadSchedule() {
       showToast("Schedule uploaded. Calendar rebuild started.", "success");
     }
     refreshStatus();
-    pollScheduleJson(previousGeneratedAt);
+    pollScheduleJson(previousGeneratedAt, payload.commit || "");
   } catch (error) {
     elements.progressBar.style.width = "0";
     showToast(error.message, "error");
@@ -179,7 +179,7 @@ async function uploadSchedule() {
 
 async function loadScheduleJson(silent = false) {
   try {
-    const schedule = await fetchJson(`${SCHEDULE_JSON_URL}?v=${Date.now()}`);
+    const schedule = await fetchScheduleJson();
     state.schedule = schedule;
     setStatsFromSchedule(schedule);
     renderSchedule(schedule);
@@ -195,11 +195,31 @@ async function loadScheduleJson(silent = false) {
   }
 }
 
-async function pollScheduleJson(previousGeneratedAt) {
+async function fetchScheduleJson() {
+  const workerUrl = normalizeUrl(elements.workerUrl.value || state.workerUrl);
+  if (workerUrl) {
+    try {
+      return await fetchJson(`${workerUrl}/calendar?v=${Date.now()}`);
+    } catch (error) {
+      console.warn("Worker calendar JSON unavailable, falling back to GitHub Pages.", error);
+    }
+  }
+  return fetchJson(`${SCHEDULE_JSON_URL}?v=${Date.now()}`);
+}
+
+async function pollScheduleJson(previousGeneratedAt, expectedCommit = "") {
   for (let attempt = 0; attempt < 12; attempt += 1) {
     await delay(5000);
     const schedule = await loadScheduleJson(true);
-    if (schedule && schedule.generated_at !== previousGeneratedAt) {
+    if (!schedule) {
+      continue;
+    }
+    if (expectedCommit && schedule.source_commit === expectedCommit) {
+      showToast("Calendar updated from the latest upload.", "success");
+      refreshStatus();
+      return;
+    }
+    if (!expectedCommit && schedule.generated_at !== previousGeneratedAt) {
       showToast("Calendar updated from published JSON.", "success");
       refreshStatus();
       return;

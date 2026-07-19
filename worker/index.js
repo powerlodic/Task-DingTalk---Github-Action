@@ -1,6 +1,7 @@
-import { dispatchWorkflow, getLatestWorkflowRun, uploadFile } from "./github_api.js";
+import { dispatchWorkflow, getFileContent, getLatestWorkflowRun, uploadFile } from "./github_api.js";
 
 const TARGET_PATH = "uploads/Schedule.xlsx";
+const CALENDAR_JSON_PATH = "docs/data/schedule.json";
 const MAX_UPLOAD_BYTES = 10 * 1024 * 1024;
 const ALLOWED_EXTENSIONS = new Set([".csv", ".xlsx"]);
 
@@ -35,6 +36,14 @@ export default {
             url: run.html_url,
           } : null,
         }, 200, env);
+      }
+
+      if (request.method === "GET" && url.pathname === "/calendar") {
+        const content = await getFileContent(env, CALENDAR_JSON_PATH);
+        return corsResponse(content, 200, env, {
+          "Content-Type": "application/json; charset=utf-8",
+          "Cache-Control": "no-store",
+        });
       }
 
       if (request.method === "POST" && url.pathname === "/run-scheduler") {
@@ -84,7 +93,8 @@ async function handleUpload(request, env) {
     contentBase64,
     `Upload schedule from GitHub Pages: ${file.name}`,
   );
-  const workflow = await dispatchCalendarBuild(env);
+  const uploadCommit = result.commit?.sha || "";
+  const workflow = await dispatchCalendarBuild(env, uploadCommit);
 
   return jsonResponse({
     ok: true,
@@ -100,9 +110,12 @@ async function handleUpload(request, env) {
   }, 200, env);
 }
 
-async function dispatchCalendarBuild(env) {
+async function dispatchCalendarBuild(env, scheduleCommit) {
   try {
-    await dispatchWorkflow(env, "dingtalk.yml", { run_notify: "false" });
+    await dispatchWorkflow(env, "dingtalk.yml", {
+      run_notify: "false",
+      schedule_commit: scheduleCommit,
+    });
     return { dispatched: true, warning: null };
   } catch (error) {
     return {

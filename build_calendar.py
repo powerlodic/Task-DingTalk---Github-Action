@@ -71,6 +71,7 @@ def build_calendar_payload(parsed, schedule_path: Path) -> dict:
 
     return {
         "generated_at": local_timestamp(),
+        "source_commit": os.getenv("SCHEDULE_COMMIT", ""),
         "source_path": schedule_path.as_posix(),
         "month": parsed.month,
         "month_name": MONTH_NAMES_ID.get(parsed.month, str(parsed.month)),

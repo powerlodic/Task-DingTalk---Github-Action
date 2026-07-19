@@ -32,6 +32,20 @@ export async function getFileSHA(env, path) {
   return payload.sha || null;
 }
 
+export async function getFileContent(env, path) {
+  assertGitHubConfig(env);
+  const url = `${GITHUB_API}/repos/${env.GITHUB_OWNER}/${env.GITHUB_REPO}/contents/${encodeURIComponentPath(path)}?ref=${encodeURIComponent(env.GITHUB_BRANCH)}`;
+  const response = await fetch(url, { headers: githubHeaders(env) });
+  if (!response.ok) {
+    throw new Error(`GitHub get file failed: ${response.status} ${await response.text()}`);
+  }
+  const payload = await response.json();
+  if (!payload.content) {
+    throw new Error(`GitHub file has no content: ${path}`);
+  }
+  return atob(String(payload.content).replace(/\s/g, ""));
+}
+
 export async function uploadFile(env, path, contentBase64, message) {
   assertGitHubConfig(env);
   const sha = await getFileSHA(env, path);

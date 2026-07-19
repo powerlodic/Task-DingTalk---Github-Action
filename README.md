@@ -165,11 +165,13 @@ wrangler deploy
 ```text
 GET  /health
 GET  /status
+GET  /calendar
 POST /upload
 POST /run-scheduler
 ```
 
 Upload expects multipart form data with `schedule_file`.
+`/calendar` reads `docs/data/schedule.json` through the GitHub API so the dashboard can bypass GitHub Pages cache when a Worker URL is configured.
 
 ## Required GitHub Secrets
 
