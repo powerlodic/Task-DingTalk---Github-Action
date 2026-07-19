@@ -1,0 +1,87 @@
+name: DingTalk Scheduler
+
+on:
+  push:
+    paths:
+      - "uploads/Schedule.xlsx"
+  schedule:
+    # 04:00 WIB, Monday-Friday.
+    - cron: "0 21 * * 0-4"
+  workflow_dispatch:
+    inputs:
+      run_notify:
+        description: "Run DingTalk scheduler after building calendar"
+        required: false
+        default: "true"
+      schedule_commit:
+        description: "Uploaded Schedule.xlsx commit SHA to build from"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  build-calendar:
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.schedule_commit || github.sha }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install requirements
+        run: pip install -r requirements.txt
+
+      - name: Build calendar JSON
+        env:
+          SCHEDULE_COMMIT: ${{ github.event.inputs.schedule_commit || github.sha }}
+        run: python build_calendar.py
+
+      - name: Commit calendar JSON
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/schedule.json
+          if git diff --cached --quiet; then
+            echo "No calendar JSON changes to commit."
+          else
+            git commit -m "Build calendar JSON"
+            git push origin HEAD:${{ github.ref_name }}
+          fi
+
+  notify:
+    if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && github.event.inputs.run_notify != 'false')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    env:
+      DINGTALK_WEBHOOK_URL: ${{ secrets.DINGTALK_WEBHOOK_URL }}
+      DINGTALK_SECRET: ${{ secrets.DINGTALK_SECRET }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.schedule_commit || github.sha }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install requirements
+        run: pip install -r requirements.txt
+
+      - name: Run DingTalk scheduler
+        run: python scheduler.py
