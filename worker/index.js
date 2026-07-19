@@ -38,7 +38,7 @@ export default {
       }
 
       if (request.method === "POST" && url.pathname === "/run-scheduler") {
-        await dispatchWorkflow(env);
+        await dispatchWorkflow(env, "dingtalk.yml", { run_notify: "true" });
         return jsonResponse({ ok: true, message: "Scheduler workflow started." }, 202, env);
       }
 
@@ -84,6 +84,7 @@ async function handleUpload(request, env) {
     contentBase64,
     `Upload schedule from GitHub Pages: ${file.name}`,
   );
+  const workflow = await dispatchCalendarBuild(env);
 
   return jsonResponse({
     ok: true,
@@ -93,8 +94,22 @@ async function handleUpload(request, env) {
     size: uploadBytes.byteLength,
     commit: result.commit?.sha || null,
     commitUrl: result.commit?.html_url || null,
+    workflowDispatched: workflow.dispatched,
+    workflowWarning: workflow.warning,
     uploadedAt: new Date().toISOString(),
   }, 200, env);
+}
+
+async function dispatchCalendarBuild(env) {
+  try {
+    await dispatchWorkflow(env, "dingtalk.yml", { run_notify: "false" });
+    return { dispatched: true, warning: null };
+  } catch (error) {
+    return {
+      dispatched: false,
+      warning: error.message || "Workflow dispatch failed.",
+    };
+  }
 }
 
 function hasGitHubConfig(env) {

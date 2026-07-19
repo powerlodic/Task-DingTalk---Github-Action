@@ -61,13 +61,13 @@ export async function commitFile(env, path, contentBase64, message, sha = null) 
   return response.json();
 }
 
-export async function dispatchWorkflow(env, workflowFile = "dingtalk.yml") {
+export async function dispatchWorkflow(env, workflowFile = "dingtalk.yml", inputs = {}) {
   assertGitHubConfig(env);
   const url = `${GITHUB_API}/repos/${env.GITHUB_OWNER}/${env.GITHUB_REPO}/actions/workflows/${encodeURIComponent(workflowFile)}/dispatches`;
   const response = await fetch(url, {
     method: "POST",
     headers: githubHeaders(env),
-    body: JSON.stringify({ ref: env.GITHUB_BRANCH }),
+    body: JSON.stringify({ ref: env.GITHUB_BRANCH, inputs }),
   });
   if (!response.ok) {
     throw new Error(`GitHub workflow dispatch failed: ${response.status} ${await response.text()}`);

@@ -1,0 +1,1800 @@
+{
+  "generated_at": "2026-07-19T06:54:11+07:00",
+  "source_path": "uploads/Schedule.xlsx",
+  "month": 7,
+  "month_name": "Juli",
+  "year": 2026,
+  "engineers": [
+    "Adi Sudarmadi",
+    "Bagas Dwi Gustana",
+    "Regi Apriadi Putra"
+  ],
+  "tasks": [
+    {
+      "code": "Duty",
+      "description": "Monitoring Payment, Repayment & MDR",
+      "capacity": "2",
+      "duration": "8 jam",
+      "color": "FFC000"
+    },
+    {
+      "code": "Off",
+      "description": "Off",
+      "capacity": "",
+      "duration": "Off",
+      "color": "FF0000"
+    },
+    {
+      "code": "Task 1",
+      "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+      "capacity": "2",
+      "duration": "8 jam",
+      "color": "00B050"
+    },
+    {
+      "code": "Task 2",
+      "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+      "capacity": "2",
+      "duration": "8 jam",
+      "color": "FFFF00"
+    },
+    {
+      "code": "Task 3",
+      "description": "Monitoring Jira (Creation & Follow Up)",
+      "capacity": "2",
+      "duration": "8 jam",
+      "color": "00B0F0"
+    }
+  ],
+  "events": [
+    {
+      "person": "Adi Sudarmadi",
+      "date": "2026-07-01",
+      "start_time": null,
+      "starts_at": "2026-07-01T04:00",
+      "task_code": "Task 3",
+      "description": "Monitoring Jira (Creation & Follow Up)",
+      "raw_value": "00B0F0",
+      "color": "00B0F0"
+    },
+    {
+      "person": "Bagas Dwi Gustana",
+      "date": "2026-07-01",
+      "start_time": null,
+      "starts_at": "2026-07-01T04:00",
+      "task_code": "Task 1",
+      "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+      "raw_value": "00B050",
+      "color": "00B050"
+    },
+    {
+      "person": "Regi Apriadi Putra",
+      "date": "2026-07-01",
+      "start_time": null,
+      "starts_at": "2026-07-01T04:00",
+      "task_code": "Task 2",
+      "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+      "raw_value": "FFFF00",
+      "color": "FFFF00"
+    },
+    {
+      "person": "Adi Sudarmadi",
+      "date": "2026-07-02",
+      "start_time": null,
+      "starts_at": "2026-07-02T04:00",
+      "task_code": "Task 3",
+      "description": "Monitoring Jira (Creation & Follow Up)",
+      "raw_value": "00B0F0",
+      "color": "00B0F0"
+    },
+    {
+      "person": "Bagas Dwi Gustana",
+      "date": "2026-07-02",
+      "start_time": null,
+      "starts_at": "2026-07-02T04:00",
+      "task_code": "Task 1",
+      "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+      "raw_value": "00B050",
+      "color": "00B050"
+    },
+    {
+      "person": "Regi Apriadi Putra",
+      "date": "2026-07-02",
+      "start_time": null,
+      "starts_at": "2026-07-02T04:00",
+      "task_code": "Task 2",
+      "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+      "raw_value": "FFFF00",
+      "color": "FFFF00"
+    },
+    {
+      "person": "Adi Sudarmadi",
+      "date": "2026-07-03",
+      "start_time": null,
+      "starts_at": "2026-07-03T04:00",
+      "task_code": "Task 3",
+      "description": "Monitoring Jira (Creation & Follow Up)",
+      "raw_value": "00B0F0",
+      "color": "00B0F0"
+    },
+    {
+      "person": "Bagas Dwi Gustana",
+      "date": "2026-07-03",
+      "start_time": null,
+      "starts_at": "2026-07-03T04:00",
+      "task_code": "Task 1",
+      "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+      "raw_value": "00B050",
+      "color": "00B050"
+    },
+    {
+      "person": "Regi Apriadi Putra",
+      "date": "2026-07-03",
+      "start_time": null,
+      "starts_at": "2026-07-03T04:00",
+      "task_code": "Task 2",
+      "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+      "raw_value": "FFFF00",
+      "color": "FFFF00"
+    },
+    {
+      "person": "Regi Apriadi Putra",
+      "date": "2026-07-04",
+      "start_time": null,
+      "starts_at": "2026-07-04T04:00",
+      "task_code": "Duty",
+      "description": "Monitoring Payment, Repayment & MDR",
+      "raw_value": "FFC000",
+      "color": "FFC000"
+    },
+    {
+      "person": "Adi Sudarmadi",
+      "date": "2026-07-05",
+      "start_time": null,
+      "starts_at": "2026-07-05T04:00",
+      "task_code": "Duty",
+      "description": "Monitoring Payment, Repayment & MDR",
+      "raw_value": "FFC000",
+      "color": "FFC000"
+    },
+    {
+      "person": "Adi Sudarmadi",
+      "date": "2026-07-06",
+      "start_time": null,
+      "starts_at": "2026-07-06T04:00",
+      "task_code": "Task 1",
+      "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+      "raw_value": "00B050",
+      "color": "00B050"
+    },
+    {
+      "person": "Bagas Dwi Gustana",
+      "date": "2026-07-06",
+      "start_time": null,
+      "starts_at": "2026-07-06T04:00",
+      "task_code": "Task 2",
+      "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+      "raw_value": "FFFF00",
+      "color": "FFFF00"
+    },
+    {
+      "person": "Regi Apriadi Putra",
+      "date": "2026-07-06",
+      "start_time": null,
+      "starts_at": "2026-07-06T04:00",
+      "task_code": "Task 3",
+      "description": "Monitoring Jira (Creation & Follow Up)",
+      "raw_value": "00B0F0",
+      "color": "00B0F0"
+    },
+    {
+      "person": "Adi Sudarmadi",
+      "date": "2026-07-07",
+      "start_time": null,
+      "starts_at": "2026-07-07T04:00",
+      "task_code": "Task 1",
+      "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+      "raw_value": "00B050",
+      "color": "00B050"
+    },
+    {
+      "person": "Bagas Dwi Gustana",
+      "date": "2026-07-07",
+      "start_time": null,
+      "starts_at": "2026-07-07T04:00",
+      "task_code": "Task 2",
+      "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+      "raw_value": "FFFF00",
+      "color": "FFFF00"
+    },
+    {
+      "person": "Regi Apriadi Putra",
+      "date": "2026-07-07",
+      "start_time": null,
+      "starts_at": "2026-07-07T04:00",
+      "task_code": "Task 3",
+      "description": "Monitoring Jira (Creation & Follow Up)",
+      "raw_value": "00B0F0",
+      "color": "00B0F0"
+    },
+    {
+      "person": "Adi Sudarmadi",
+      "date": "2026-07-08",
+      "start_time": null,
+      "starts_at": "2026-07-08T04:00",
+      "task_code": "Task 1",
+      "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+      "raw_value": "00B050",
+      "color": "00B050"
+    },
+    {
+      "person": "Bagas Dwi Gustana",
+      "date": "2026-07-08",
+      "start_time": null,
+      "starts_at": "2026-07-08T04:00",
+      "task_code": "Task 2",
+      "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+      "raw_value": "FFFF00",
+      "color": "FFFF00"
+    },
+    {
+      "person": "Regi Apriadi Putra",
+      "date": "2026-07-08",
+      "start_time": null,
+      "starts_at": "2026-07-08T04:00",
+      "task_code": "Task 3",
+      "description": "Monitoring Jira (Creation & Follow Up)",
+      "raw_value": "00B0F0",
+      "color": "00B0F0"
+    },
+    {
+      "person": "Adi Sudarmadi",
+      "date": "2026-07-09",
+      "start_time": null,
+      "starts_at": "2026-07-09T04:00",
+      "task_code": "Task 1",
+      "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+      "raw_value": "00B050",
+      "color": "00B050"
+    },
+    {
+      "person": "Bagas Dwi Gustana",
+      "date": "2026-07-09",
+      "start_time": null,
+      "starts_at": "2026-07-09T04:00",
+      "task_code": "Task 2",
+      "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+      "raw_value": "FFFF00",
+      "color": "FFFF00"
+    },
+    {
+      "person": "Regi Apriadi Putra",
+      "date": "2026-07-09",
+      "start_time": null,
+      "starts_at": "2026-07-09T04:00",
+      "task_code": "Task 3",
+      "description": "Monitoring Jira (Creation & Follow Up)",
+      "raw_value": "00B0F0",
+      "color": "00B0F0"
+    },
+    {
+      "person": "Adi Sudarmadi",
+      "date": "2026-07-10",
+      "start_time": null,
+      "starts_at": "2026-07-10T04:00",
+      "task_code": "Task 1",
+      "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+      "raw_value": "00B050",
+      "color": "00B050"
+    },
+    {
+      "person": "Bagas Dwi Gustana",
+      "date": "2026-07-10",
+      "start_time": null,
+      "starts_at": "2026-07-10T04:00",
+      "task_code": "Task 2",
+      "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+      "raw_value": "FFFF00",
+      "color": "FFFF00"
+    },
+    {
+      "person": "Regi Apriadi Putra",
+      "date": "2026-07-10",
+      "start_time": null,
+      "starts_at": "2026-07-10T04:00",
+      "task_code": "Task 3",
+      "description": "Monitoring Jira (Creation & Follow Up)",
+      "raw_value": "00B0F0",
+      "color": "00B0F0"
+    },
+    {
+      "person": "Adi Sudarmadi",
+      "date": "2026-07-11",
+      "start_time": null,
+      "starts_at": "2026-07-11T04:00",
+      "task_code": "Duty",
+      "description": "Monitoring Payment, Repayment & MDR",
+      "raw_value": "FFC000",
+      "color": "FFC000"
+    },
+    {
+      "person": "Bagas Dwi Gustana",
+      "date": "2026-07-12",
+      "start_time": null,
+      "starts_at": "2026-07-12T04:00",
+      "task_code": "Duty",
+      "description": "Monitoring Payment, Repayment & MDR",
+      "raw_value": "FFC000",
+      "color": "FFC000"
+    },
+    {
+      "person": "Adi Sudarmadi",
+      "date": "2026-07-13",
+      "start_time": null,
+      "starts_at": "2026-07-13T04:00",
+      "task_code": "Task 2",
+      "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+      "raw_value": "FFFF00",
+      "color": "FFFF00"
+    },
+    {
+      "person": "Bagas Dwi Gustana",
+      "date": "2026-07-13",
+      "start_time": null,
+      "starts_at": "2026-07-13T04:00",
+      "task_code": "Task 3",
+      "description": "Monitoring Jira (Creation & Follow Up)",
+      "raw_value": "00B0F0",
+      "color": "00B0F0"
+    },
+    {
+      "person": "Regi Apriadi Putra",
+      "date": "2026-07-13",
+      "start_time": null,
+      "starts_at": "2026-07-13T04:00",
+      "task_code": "Task 1",
+      "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+      "raw_value": "00B050",
+      "color": "00B050"
+    },
+    {
+      "person": "Adi Sudarmadi",
+      "date": "2026-07-14",
+      "start_time": null,
+      "starts_at": "2026-07-14T04:00",
+      "task_code": "Task 2",
+      "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+      "raw_value": "FFFF00",
+      "color": "FFFF00"
+    },
+    {
+      "person": "Bagas Dwi Gustana",
+      "date": "2026-07-14",
+      "start_time": null,
+      "starts_at": "2026-07-14T04:00",
+      "task_code": "Task 3",
+      "description": "Monitoring Jira (Creation & Follow Up)",
+      "raw_value": "00B0F0",
+      "color": "00B0F0"
+    },
+    {
+      "person": "Regi Apriadi Putra",
+      "date": "2026-07-14",
+      "start_time": null,
+      "starts_at": "2026-07-14T04:00",
+      "task_code": "Task 1",
+      "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+      "raw_value": "00B050",
+      "color": "00B050"
+    },
+    {
+      "person": "Adi Sudarmadi",
+      "date": "2026-07-15",
+      "start_time": null,
+      "starts_at": "2026-07-15T04:00",
+      "task_code": "Task 2",
+      "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+      "raw_value": "FFFF00",
+      "color": "FFFF00"
+    },
+    {
+      "person": "Bagas Dwi Gustana",
+      "date": "2026-07-15",
+      "start_time": null,
+      "starts_at": "2026-07-15T04:00",
+      "task_code": "Task 3",
+      "description": "Monitoring Jira (Creation & Follow Up)",
+      "raw_value": "00B0F0",
+      "color": "00B0F0"
+    },
+    {
+      "person": "Regi Apriadi Putra",
+      "date": "2026-07-15",
+      "start_time": null,
+      "starts_at": "2026-07-15T04:00",
+      "task_code": "Task 1",
+      "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+      "raw_value": "00B050",
+      "color": "00B050"
+    },
+    {
+      "person": "Adi Sudarmadi",
+      "date": "2026-07-16",
+      "start_time": null,
+      "starts_at": "2026-07-16T04:00",
+      "task_code": "Task 2",
+      "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+      "raw_value": "FFFF00",
+      "color": "FFFF00"
+    },
+    {
+      "person": "Bagas Dwi Gustana",
+      "date": "2026-07-16",
+      "start_time": null,
+      "starts_at": "2026-07-16T04:00",
+      "task_code": "Task 3",
+      "description": "Monitoring Jira (Creation & Follow Up)",
+      "raw_value": "00B0F0",
+      "color": "00B0F0"
+    },
+    {
+      "person": "Regi Apriadi Putra",
+      "date": "2026-07-16",
+      "start_time": null,
+      "starts_at": "2026-07-16T04:00",
+      "task_code": "Task 1",
+      "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+      "raw_value": "00B050",
+      "color": "00B050"
+    },
+    {
+      "person": "Adi Sudarmadi",
+      "date": "2026-07-17",
+      "start_time": null,
+      "starts_at": "2026-07-17T04:00",
+      "task_code": "Task 2",
+      "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+      "raw_value": "FFFF00",
+      "color": "FFFF00"
+    },
+    {
+      "person": "Bagas Dwi Gustana",
+      "date": "2026-07-17",
+      "start_time": null,
+      "starts_at": "2026-07-17T04:00",
+      "task_code": "Task 3",
+      "description": "Monitoring Jira (Creation & Follow Up)",
+      "raw_value": "00B0F0",
+      "color": "00B0F0"
+    },
+    {
+      "person": "Regi Apriadi Putra",
+      "date": "2026-07-17",
+      "start_time": null,
+      "starts_at": "2026-07-17T04:00",
+      "task_code": "Task 1",
+      "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+      "raw_value": "00B050",
+      "color": "00B050"
+    },
+    {
+      "person": "Regi Apriadi Putra",
+      "date": "2026-07-18",
+      "start_time": null,
+      "starts_at": "2026-07-18T04:00",
+      "task_code": "Duty",
+      "description": "Monitoring Payment, Repayment & MDR",
+      "raw_value": "FFC000",
+      "color": "FFC000"
+    },
+    {
+      "person": "Bagas Dwi Gustana",
+      "date": "2026-07-19",
+      "start_time": null,
+      "starts_at": "2026-07-19T04:00",
+      "task_code": "Duty",
+      "description": "Monitoring Payment, Repayment & MDR",
+      "raw_value": "FFC000",
+      "color": "FFC000"
+    },
+    {
+      "person": "Adi Sudarmadi",
+      "date": "2026-07-20",
+      "start_time": null,
+      "starts_at": "2026-07-20T04:00",
+      "task_code": "Task 3",
+      "description": "Monitoring Jira (Creation & Follow Up)",
+      "raw_value": "00B0F0",
+      "color": "00B0F0"
+    },
+    {
+      "person": "Bagas Dwi Gustana",
+      "date": "2026-07-20",
+      "start_time": null,
+      "starts_at": "2026-07-20T04:00",
+      "task_code": "Task 1",
+      "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+      "raw_value": "00B050",
+      "color": "00B050"
+    },
+    {
+      "person": "Regi Apriadi Putra",
+      "date": "2026-07-20",
+      "start_time": null,
+      "starts_at": "2026-07-20T04:00",
+      "task_code": "Task 2",
+      "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+      "raw_value": "FFFF00",
+      "color": "FFFF00"
+    },
+    {
+      "person": "Adi Sudarmadi",
+      "date": "2026-07-21",
+      "start_time": null,
+      "starts_at": "2026-07-21T04:00",
+      "task_code": "Task 3",
+      "description": "Monitoring Jira (Creation & Follow Up)",
+      "raw_value": "00B0F0",
+      "color": "00B0F0"
+    },
+    {
+      "person": "Bagas Dwi Gustana",
+      "date": "2026-07-21",
+      "start_time": null,
+      "starts_at": "2026-07-21T04:00",
+      "task_code": "Task 1",
+      "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+      "raw_value": "00B050",
+      "color": "00B050"
+    },
+    {
+      "person": "Regi Apriadi Putra",
+      "date": "2026-07-21",
+      "start_time": null,
+      "starts_at": "2026-07-21T04:00",
+      "task_code": "Task 2",
+      "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+      "raw_value": "FFFF00",
+      "color": "FFFF00"
+    },
+    {
+      "person": "Adi Sudarmadi",
+      "date": "2026-07-22",
+      "start_time": null,
+      "starts_at": "2026-07-22T04:00",
+      "task_code": "Task 3",
+      "description": "Monitoring Jira (Creation & Follow Up)",
+      "raw_value": "00B0F0",
+      "color": "00B0F0"
+    },
+    {
+      "person": "Bagas Dwi Gustana",
+      "date": "2026-07-22",
+      "start_time": null,
+      "starts_at": "2026-07-22T04:00",
+      "task_code": "Task 1",
+      "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+      "raw_value": "00B050",
+      "color": "00B050"
+    },
+    {
+      "person": "Regi Apriadi Putra",
+      "date": "2026-07-22",
+      "start_time": null,
+      "starts_at": "2026-07-22T04:00",
+      "task_code": "Task 2",
+      "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+      "raw_value": "FFFF00",
+      "color": "FFFF00"
+    },
+    {
+      "person": "Adi Sudarmadi",
+      "date": "2026-07-23",
+      "start_time": null,
+      "starts_at": "2026-07-23T04:00",
+      "task_code": "Task 3",
+      "description": "Monitoring Jira (Creation & Follow Up)",
+      "raw_value": "00B0F0",
+      "color": "00B0F0"
+    },
+    {
+      "person": "Bagas Dwi Gustana",
+      "date": "2026-07-23",
+      "start_time": null,
+      "starts_at": "2026-07-23T04:00",
+      "task_code": "Task 1",
+      "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+      "raw_value": "00B050",
+      "color": "00B050"
+    },
+    {
+      "person": "Regi Apriadi Putra",
+      "date": "2026-07-23",
+      "start_time": null,
+      "starts_at": "2026-07-23T04:00",
+      "task_code": "Task 2",
+      "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+      "raw_value": "FFFF00",
+      "color": "FFFF00"
+    },
+    {
+      "person": "Adi Sudarmadi",
+      "date": "2026-07-24",
+      "start_time": null,
+      "starts_at": "2026-07-24T04:00",
+      "task_code": "Task 3",
+      "description": "Monitoring Jira (Creation & Follow Up)",
+      "raw_value": "00B0F0",
+      "color": "00B0F0"
+    },
+    {
+      "person": "Bagas Dwi Gustana",
+      "date": "2026-07-24",
+      "start_time": null,
+      "starts_at": "2026-07-24T04:00",
+      "task_code": "Task 1",
+      "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+      "raw_value": "00B050",
+      "color": "00B050"
+    },
+    {
+      "person": "Regi Apriadi Putra",
+      "date": "2026-07-24",
+      "start_time": null,
+      "starts_at": "2026-07-24T04:00",
+      "task_code": "Task 2",
+      "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+      "raw_value": "FFFF00",
+      "color": "FFFF00"
+    },
+    {
+      "person": "Bagas Dwi Gustana",
+      "date": "2026-07-25",
+      "start_time": null,
+      "starts_at": "2026-07-25T04:00",
+      "task_code": "Duty",
+      "description": "Monitoring Payment, Repayment & MDR",
+      "raw_value": "FFC000",
+      "color": "FFC000"
+    },
+    {
+      "person": "Adi Sudarmadi",
+      "date": "2026-07-26",
+      "start_time": null,
+      "starts_at": "2026-07-26T04:00",
+      "task_code": "Duty",
+      "description": "Monitoring Payment, Repayment & MDR",
+      "raw_value": "FFC000",
+      "color": "FFC000"
+    },
+    {
+      "person": "Adi Sudarmadi",
+      "date": "2026-07-27",
+      "start_time": null,
+      "starts_at": "2026-07-27T04:00",
+      "task_code": "Task 1",
+      "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+      "raw_value": "00B050",
+      "color": "00B050"
+    },
+    {
+      "person": "Bagas Dwi Gustana",
+      "date": "2026-07-27",
+      "start_time": null,
+      "starts_at": "2026-07-27T04:00",
+      "task_code": "Task 2",
+      "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+      "raw_value": "FFFF00",
+      "color": "FFFF00"
+    },
+    {
+      "person": "Regi Apriadi Putra",
+      "date": "2026-07-27",
+      "start_time": null,
+      "starts_at": "2026-07-27T04:00",
+      "task_code": "Task 3",
+      "description": "Monitoring Jira (Creation & Follow Up)",
+      "raw_value": "00B0F0",
+      "color": "00B0F0"
+    },
+    {
+      "person": "Adi Sudarmadi",
+      "date": "2026-07-28",
+      "start_time": null,
+      "starts_at": "2026-07-28T04:00",
+      "task_code": "Task 1",
+      "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+      "raw_value": "00B050",
+      "color": "00B050"
+    },
+    {
+      "person": "Bagas Dwi Gustana",
+      "date": "2026-07-28",
+      "start_time": null,
+      "starts_at": "2026-07-28T04:00",
+      "task_code": "Task 2",
+      "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+      "raw_value": "FFFF00",
+      "color": "FFFF00"
+    },
+    {
+      "person": "Regi Apriadi Putra",
+      "date": "2026-07-28",
+      "start_time": null,
+      "starts_at": "2026-07-28T04:00",
+      "task_code": "Task 3",
+      "description": "Monitoring Jira (Creation & Follow Up)",
+      "raw_value": "00B0F0",
+      "color": "00B0F0"
+    },
+    {
+      "person": "Adi Sudarmadi",
+      "date": "2026-07-29",
+      "start_time": null,
+      "starts_at": "2026-07-29T04:00",
+      "task_code": "Task 1",
+      "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+      "raw_value": "00B050",
+      "color": "00B050"
+    },
+    {
+      "person": "Bagas Dwi Gustana",
+      "date": "2026-07-29",
+      "start_time": null,
+      "starts_at": "2026-07-29T04:00",
+      "task_code": "Task 2",
+      "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+      "raw_value": "FFFF00",
+      "color": "FFFF00"
+    },
+    {
+      "person": "Regi Apriadi Putra",
+      "date": "2026-07-29",
+      "start_time": null,
+      "starts_at": "2026-07-29T04:00",
+      "task_code": "Task 3",
+      "description": "Monitoring Jira (Creation & Follow Up)",
+      "raw_value": "00B0F0",
+      "color": "00B0F0"
+    },
+    {
+      "person": "Adi Sudarmadi",
+      "date": "2026-07-30",
+      "start_time": null,
+      "starts_at": "2026-07-30T04:00",
+      "task_code": "Task 1",
+      "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+      "raw_value": "00B050",
+      "color": "00B050"
+    },
+    {
+      "person": "Bagas Dwi Gustana",
+      "date": "2026-07-30",
+      "start_time": null,
+      "starts_at": "2026-07-30T04:00",
+      "task_code": "Task 2",
+      "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+      "raw_value": "FFFF00",
+      "color": "FFFF00"
+    },
+    {
+      "person": "Regi Apriadi Putra",
+      "date": "2026-07-30",
+      "start_time": null,
+      "starts_at": "2026-07-30T04:00",
+      "task_code": "Task 3",
+      "description": "Monitoring Jira (Creation & Follow Up)",
+      "raw_value": "00B0F0",
+      "color": "00B0F0"
+    },
+    {
+      "person": "Adi Sudarmadi",
+      "date": "2026-07-31",
+      "start_time": null,
+      "starts_at": "2026-07-31T04:00",
+      "task_code": "Task 1",
+      "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+      "raw_value": "00B050",
+      "color": "00B050"
+    },
+    {
+      "person": "Bagas Dwi Gustana",
+      "date": "2026-07-31",
+      "start_time": null,
+      "starts_at": "2026-07-31T04:00",
+      "task_code": "Task 2",
+      "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+      "raw_value": "FFFF00",
+      "color": "FFFF00"
+    },
+    {
+      "person": "Regi Apriadi Putra",
+      "date": "2026-07-31",
+      "start_time": null,
+      "starts_at": "2026-07-31T04:00",
+      "task_code": "Task 3",
+      "description": "Monitoring Jira (Creation & Follow Up)",
+      "raw_value": "00B0F0",
+      "color": "00B0F0"
+    }
+  ],
+  "stats": {
+    "total_engineers": 3,
+    "total_events": 77,
+    "total_tasks": 5
+  },
+  "calendar": {
+    "weeks": [
+      [
+        null,
+        null,
+        {
+          "date": "2026-07-01",
+          "day": 1,
+          "events": [
+            {
+              "person": "Adi Sudarmadi",
+              "date": "2026-07-01",
+              "start_time": null,
+              "starts_at": "2026-07-01T04:00",
+              "task_code": "Task 3",
+              "description": "Monitoring Jira (Creation & Follow Up)",
+              "raw_value": "00B0F0",
+              "color": "00B0F0"
+            },
+            {
+              "person": "Bagas Dwi Gustana",
+              "date": "2026-07-01",
+              "start_time": null,
+              "starts_at": "2026-07-01T04:00",
+              "task_code": "Task 1",
+              "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+              "raw_value": "00B050",
+              "color": "00B050"
+            },
+            {
+              "person": "Regi Apriadi Putra",
+              "date": "2026-07-01",
+              "start_time": null,
+              "starts_at": "2026-07-01T04:00",
+              "task_code": "Task 2",
+              "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+              "raw_value": "FFFF00",
+              "color": "FFFF00"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-02",
+          "day": 2,
+          "events": [
+            {
+              "person": "Adi Sudarmadi",
+              "date": "2026-07-02",
+              "start_time": null,
+              "starts_at": "2026-07-02T04:00",
+              "task_code": "Task 3",
+              "description": "Monitoring Jira (Creation & Follow Up)",
+              "raw_value": "00B0F0",
+              "color": "00B0F0"
+            },
+            {
+              "person": "Bagas Dwi Gustana",
+              "date": "2026-07-02",
+              "start_time": null,
+              "starts_at": "2026-07-02T04:00",
+              "task_code": "Task 1",
+              "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+              "raw_value": "00B050",
+              "color": "00B050"
+            },
+            {
+              "person": "Regi Apriadi Putra",
+              "date": "2026-07-02",
+              "start_time": null,
+              "starts_at": "2026-07-02T04:00",
+              "task_code": "Task 2",
+              "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+              "raw_value": "FFFF00",
+              "color": "FFFF00"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-03",
+          "day": 3,
+          "events": [
+            {
+              "person": "Adi Sudarmadi",
+              "date": "2026-07-03",
+              "start_time": null,
+              "starts_at": "2026-07-03T04:00",
+              "task_code": "Task 3",
+              "description": "Monitoring Jira (Creation & Follow Up)",
+              "raw_value": "00B0F0",
+              "color": "00B0F0"
+            },
+            {
+              "person": "Bagas Dwi Gustana",
+              "date": "2026-07-03",
+              "start_time": null,
+              "starts_at": "2026-07-03T04:00",
+              "task_code": "Task 1",
+              "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+              "raw_value": "00B050",
+              "color": "00B050"
+            },
+            {
+              "person": "Regi Apriadi Putra",
+              "date": "2026-07-03",
+              "start_time": null,
+              "starts_at": "2026-07-03T04:00",
+              "task_code": "Task 2",
+              "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+              "raw_value": "FFFF00",
+              "color": "FFFF00"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-04",
+          "day": 4,
+          "events": [
+            {
+              "person": "Regi Apriadi Putra",
+              "date": "2026-07-04",
+              "start_time": null,
+              "starts_at": "2026-07-04T04:00",
+              "task_code": "Duty",
+              "description": "Monitoring Payment, Repayment & MDR",
+              "raw_value": "FFC000",
+              "color": "FFC000"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-05",
+          "day": 5,
+          "events": [
+            {
+              "person": "Adi Sudarmadi",
+              "date": "2026-07-05",
+              "start_time": null,
+              "starts_at": "2026-07-05T04:00",
+              "task_code": "Duty",
+              "description": "Monitoring Payment, Repayment & MDR",
+              "raw_value": "FFC000",
+              "color": "FFC000"
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "date": "2026-07-06",
+          "day": 6,
+          "events": [
+            {
+              "person": "Adi Sudarmadi",
+              "date": "2026-07-06",
+              "start_time": null,
+              "starts_at": "2026-07-06T04:00",
+              "task_code": "Task 1",
+              "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+              "raw_value": "00B050",
+              "color": "00B050"
+            },
+            {
+              "person": "Bagas Dwi Gustana",
+              "date": "2026-07-06",
+              "start_time": null,
+              "starts_at": "2026-07-06T04:00",
+              "task_code": "Task 2",
+              "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+              "raw_value": "FFFF00",
+              "color": "FFFF00"
+            },
+            {
+              "person": "Regi Apriadi Putra",
+              "date": "2026-07-06",
+              "start_time": null,
+              "starts_at": "2026-07-06T04:00",
+              "task_code": "Task 3",
+              "description": "Monitoring Jira (Creation & Follow Up)",
+              "raw_value": "00B0F0",
+              "color": "00B0F0"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-07",
+          "day": 7,
+          "events": [
+            {
+              "person": "Adi Sudarmadi",
+              "date": "2026-07-07",
+              "start_time": null,
+              "starts_at": "2026-07-07T04:00",
+              "task_code": "Task 1",
+              "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+              "raw_value": "00B050",
+              "color": "00B050"
+            },
+            {
+              "person": "Bagas Dwi Gustana",
+              "date": "2026-07-07",
+              "start_time": null,
+              "starts_at": "2026-07-07T04:00",
+              "task_code": "Task 2",
+              "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+              "raw_value": "FFFF00",
+              "color": "FFFF00"
+            },
+            {
+              "person": "Regi Apriadi Putra",
+              "date": "2026-07-07",
+              "start_time": null,
+              "starts_at": "2026-07-07T04:00",
+              "task_code": "Task 3",
+              "description": "Monitoring Jira (Creation & Follow Up)",
+              "raw_value": "00B0F0",
+              "color": "00B0F0"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-08",
+          "day": 8,
+          "events": [
+            {
+              "person": "Adi Sudarmadi",
+              "date": "2026-07-08",
+              "start_time": null,
+              "starts_at": "2026-07-08T04:00",
+              "task_code": "Task 1",
+              "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+              "raw_value": "00B050",
+              "color": "00B050"
+            },
+            {
+              "person": "Bagas Dwi Gustana",
+              "date": "2026-07-08",
+              "start_time": null,
+              "starts_at": "2026-07-08T04:00",
+              "task_code": "Task 2",
+              "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+              "raw_value": "FFFF00",
+              "color": "FFFF00"
+            },
+            {
+              "person": "Regi Apriadi Putra",
+              "date": "2026-07-08",
+              "start_time": null,
+              "starts_at": "2026-07-08T04:00",
+              "task_code": "Task 3",
+              "description": "Monitoring Jira (Creation & Follow Up)",
+              "raw_value": "00B0F0",
+              "color": "00B0F0"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-09",
+          "day": 9,
+          "events": [
+            {
+              "person": "Adi Sudarmadi",
+              "date": "2026-07-09",
+              "start_time": null,
+              "starts_at": "2026-07-09T04:00",
+              "task_code": "Task 1",
+              "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+              "raw_value": "00B050",
+              "color": "00B050"
+            },
+            {
+              "person": "Bagas Dwi Gustana",
+              "date": "2026-07-09",
+              "start_time": null,
+              "starts_at": "2026-07-09T04:00",
+              "task_code": "Task 2",
+              "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+              "raw_value": "FFFF00",
+              "color": "FFFF00"
+            },
+            {
+              "person": "Regi Apriadi Putra",
+              "date": "2026-07-09",
+              "start_time": null,
+              "starts_at": "2026-07-09T04:00",
+              "task_code": "Task 3",
+              "description": "Monitoring Jira (Creation & Follow Up)",
+              "raw_value": "00B0F0",
+              "color": "00B0F0"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-10",
+          "day": 10,
+          "events": [
+            {
+              "person": "Adi Sudarmadi",
+              "date": "2026-07-10",
+              "start_time": null,
+              "starts_at": "2026-07-10T04:00",
+              "task_code": "Task 1",
+              "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+              "raw_value": "00B050",
+              "color": "00B050"
+            },
+            {
+              "person": "Bagas Dwi Gustana",
+              "date": "2026-07-10",
+              "start_time": null,
+              "starts_at": "2026-07-10T04:00",
+              "task_code": "Task 2",
+              "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+              "raw_value": "FFFF00",
+              "color": "FFFF00"
+            },
+            {
+              "person": "Regi Apriadi Putra",
+              "date": "2026-07-10",
+              "start_time": null,
+              "starts_at": "2026-07-10T04:00",
+              "task_code": "Task 3",
+              "description": "Monitoring Jira (Creation & Follow Up)",
+              "raw_value": "00B0F0",
+              "color": "00B0F0"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-11",
+          "day": 11,
+          "events": [
+            {
+              "person": "Adi Sudarmadi",
+              "date": "2026-07-11",
+              "start_time": null,
+              "starts_at": "2026-07-11T04:00",
+              "task_code": "Duty",
+              "description": "Monitoring Payment, Repayment & MDR",
+              "raw_value": "FFC000",
+              "color": "FFC000"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-12",
+          "day": 12,
+          "events": [
+            {
+              "person": "Bagas Dwi Gustana",
+              "date": "2026-07-12",
+              "start_time": null,
+              "starts_at": "2026-07-12T04:00",
+              "task_code": "Duty",
+              "description": "Monitoring Payment, Repayment & MDR",
+              "raw_value": "FFC000",
+              "color": "FFC000"
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "date": "2026-07-13",
+          "day": 13,
+          "events": [
+            {
+              "person": "Adi Sudarmadi",
+              "date": "2026-07-13",
+              "start_time": null,
+              "starts_at": "2026-07-13T04:00",
+              "task_code": "Task 2",
+              "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+              "raw_value": "FFFF00",
+              "color": "FFFF00"
+            },
+            {
+              "person": "Bagas Dwi Gustana",
+              "date": "2026-07-13",
+              "start_time": null,
+              "starts_at": "2026-07-13T04:00",
+              "task_code": "Task 3",
+              "description": "Monitoring Jira (Creation & Follow Up)",
+              "raw_value": "00B0F0",
+              "color": "00B0F0"
+            },
+            {
+              "person": "Regi Apriadi Putra",
+              "date": "2026-07-13",
+              "start_time": null,
+              "starts_at": "2026-07-13T04:00",
+              "task_code": "Task 1",
+              "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+              "raw_value": "00B050",
+              "color": "00B050"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-14",
+          "day": 14,
+          "events": [
+            {
+              "person": "Adi Sudarmadi",
+              "date": "2026-07-14",
+              "start_time": null,
+              "starts_at": "2026-07-14T04:00",
+              "task_code": "Task 2",
+              "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+              "raw_value": "FFFF00",
+              "color": "FFFF00"
+            },
+            {
+              "person": "Bagas Dwi Gustana",
+              "date": "2026-07-14",
+              "start_time": null,
+              "starts_at": "2026-07-14T04:00",
+              "task_code": "Task 3",
+              "description": "Monitoring Jira (Creation & Follow Up)",
+              "raw_value": "00B0F0",
+              "color": "00B0F0"
+            },
+            {
+              "person": "Regi Apriadi Putra",
+              "date": "2026-07-14",
+              "start_time": null,
+              "starts_at": "2026-07-14T04:00",
+              "task_code": "Task 1",
+              "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+              "raw_value": "00B050",
+              "color": "00B050"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-15",
+          "day": 15,
+          "events": [
+            {
+              "person": "Adi Sudarmadi",
+              "date": "2026-07-15",
+              "start_time": null,
+              "starts_at": "2026-07-15T04:00",
+              "task_code": "Task 2",
+              "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+              "raw_value": "FFFF00",
+              "color": "FFFF00"
+            },
+            {
+              "person": "Bagas Dwi Gustana",
+              "date": "2026-07-15",
+              "start_time": null,
+              "starts_at": "2026-07-15T04:00",
+              "task_code": "Task 3",
+              "description": "Monitoring Jira (Creation & Follow Up)",
+              "raw_value": "00B0F0",
+              "color": "00B0F0"
+            },
+            {
+              "person": "Regi Apriadi Putra",
+              "date": "2026-07-15",
+              "start_time": null,
+              "starts_at": "2026-07-15T04:00",
+              "task_code": "Task 1",
+              "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+              "raw_value": "00B050",
+              "color": "00B050"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-16",
+          "day": 16,
+          "events": [
+            {
+              "person": "Adi Sudarmadi",
+              "date": "2026-07-16",
+              "start_time": null,
+              "starts_at": "2026-07-16T04:00",
+              "task_code": "Task 2",
+              "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+              "raw_value": "FFFF00",
+              "color": "FFFF00"
+            },
+            {
+              "person": "Bagas Dwi Gustana",
+              "date": "2026-07-16",
+              "start_time": null,
+              "starts_at": "2026-07-16T04:00",
+              "task_code": "Task 3",
+              "description": "Monitoring Jira (Creation & Follow Up)",
+              "raw_value": "00B0F0",
+              "color": "00B0F0"
+            },
+            {
+              "person": "Regi Apriadi Putra",
+              "date": "2026-07-16",
+              "start_time": null,
+              "starts_at": "2026-07-16T04:00",
+              "task_code": "Task 1",
+              "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+              "raw_value": "00B050",
+              "color": "00B050"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-17",
+          "day": 17,
+          "events": [
+            {
+              "person": "Adi Sudarmadi",
+              "date": "2026-07-17",
+              "start_time": null,
+              "starts_at": "2026-07-17T04:00",
+              "task_code": "Task 2",
+              "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+              "raw_value": "FFFF00",
+              "color": "FFFF00"
+            },
+            {
+              "person": "Bagas Dwi Gustana",
+              "date": "2026-07-17",
+              "start_time": null,
+              "starts_at": "2026-07-17T04:00",
+              "task_code": "Task 3",
+              "description": "Monitoring Jira (Creation & Follow Up)",
+              "raw_value": "00B0F0",
+              "color": "00B0F0"
+            },
+            {
+              "person": "Regi Apriadi Putra",
+              "date": "2026-07-17",
+              "start_time": null,
+              "starts_at": "2026-07-17T04:00",
+              "task_code": "Task 1",
+              "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+              "raw_value": "00B050",
+              "color": "00B050"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-18",
+          "day": 18,
+          "events": [
+            {
+              "person": "Regi Apriadi Putra",
+              "date": "2026-07-18",
+              "start_time": null,
+              "starts_at": "2026-07-18T04:00",
+              "task_code": "Duty",
+              "description": "Monitoring Payment, Repayment & MDR",
+              "raw_value": "FFC000",
+              "color": "FFC000"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-19",
+          "day": 19,
+          "events": [
+            {
+              "person": "Bagas Dwi Gustana",
+              "date": "2026-07-19",
+              "start_time": null,
+              "starts_at": "2026-07-19T04:00",
+              "task_code": "Duty",
+              "description": "Monitoring Payment, Repayment & MDR",
+              "raw_value": "FFC000",
+              "color": "FFC000"
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "date": "2026-07-20",
+          "day": 20,
+          "events": [
+            {
+              "person": "Adi Sudarmadi",
+              "date": "2026-07-20",
+              "start_time": null,
+              "starts_at": "2026-07-20T04:00",
+              "task_code": "Task 3",
+              "description": "Monitoring Jira (Creation & Follow Up)",
+              "raw_value": "00B0F0",
+              "color": "00B0F0"
+            },
+            {
+              "person": "Bagas Dwi Gustana",
+              "date": "2026-07-20",
+              "start_time": null,
+              "starts_at": "2026-07-20T04:00",
+              "task_code": "Task 1",
+              "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+              "raw_value": "00B050",
+              "color": "00B050"
+            },
+            {
+              "person": "Regi Apriadi Putra",
+              "date": "2026-07-20",
+              "start_time": null,
+              "starts_at": "2026-07-20T04:00",
+              "task_code": "Task 2",
+              "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+              "raw_value": "FFFF00",
+              "color": "FFFF00"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-21",
+          "day": 21,
+          "events": [
+            {
+              "person": "Adi Sudarmadi",
+              "date": "2026-07-21",
+              "start_time": null,
+              "starts_at": "2026-07-21T04:00",
+              "task_code": "Task 3",
+              "description": "Monitoring Jira (Creation & Follow Up)",
+              "raw_value": "00B0F0",
+              "color": "00B0F0"
+            },
+            {
+              "person": "Bagas Dwi Gustana",
+              "date": "2026-07-21",
+              "start_time": null,
+              "starts_at": "2026-07-21T04:00",
+              "task_code": "Task 1",
+              "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+              "raw_value": "00B050",
+              "color": "00B050"
+            },
+            {
+              "person": "Regi Apriadi Putra",
+              "date": "2026-07-21",
+              "start_time": null,
+              "starts_at": "2026-07-21T04:00",
+              "task_code": "Task 2",
+              "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+              "raw_value": "FFFF00",
+              "color": "FFFF00"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-22",
+          "day": 22,
+          "events": [
+            {
+              "person": "Adi Sudarmadi",
+              "date": "2026-07-22",
+              "start_time": null,
+              "starts_at": "2026-07-22T04:00",
+              "task_code": "Task 3",
+              "description": "Monitoring Jira (Creation & Follow Up)",
+              "raw_value": "00B0F0",
+              "color": "00B0F0"
+            },
+            {
+              "person": "Bagas Dwi Gustana",
+              "date": "2026-07-22",
+              "start_time": null,
+              "starts_at": "2026-07-22T04:00",
+              "task_code": "Task 1",
+              "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+              "raw_value": "00B050",
+              "color": "00B050"
+            },
+            {
+              "person": "Regi Apriadi Putra",
+              "date": "2026-07-22",
+              "start_time": null,
+              "starts_at": "2026-07-22T04:00",
+              "task_code": "Task 2",
+              "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+              "raw_value": "FFFF00",
+              "color": "FFFF00"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-23",
+          "day": 23,
+          "events": [
+            {
+              "person": "Adi Sudarmadi",
+              "date": "2026-07-23",
+              "start_time": null,
+              "starts_at": "2026-07-23T04:00",
+              "task_code": "Task 3",
+              "description": "Monitoring Jira (Creation & Follow Up)",
+              "raw_value": "00B0F0",
+              "color": "00B0F0"
+            },
+            {
+              "person": "Bagas Dwi Gustana",
+              "date": "2026-07-23",
+              "start_time": null,
+              "starts_at": "2026-07-23T04:00",
+              "task_code": "Task 1",
+              "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+              "raw_value": "00B050",
+              "color": "00B050"
+            },
+            {
+              "person": "Regi Apriadi Putra",
+              "date": "2026-07-23",
+              "start_time": null,
+              "starts_at": "2026-07-23T04:00",
+              "task_code": "Task 2",
+              "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+              "raw_value": "FFFF00",
+              "color": "FFFF00"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-24",
+          "day": 24,
+          "events": [
+            {
+              "person": "Adi Sudarmadi",
+              "date": "2026-07-24",
+              "start_time": null,
+              "starts_at": "2026-07-24T04:00",
+              "task_code": "Task 3",
+              "description": "Monitoring Jira (Creation & Follow Up)",
+              "raw_value": "00B0F0",
+              "color": "00B0F0"
+            },
+            {
+              "person": "Bagas Dwi Gustana",
+              "date": "2026-07-24",
+              "start_time": null,
+              "starts_at": "2026-07-24T04:00",
+              "task_code": "Task 1",
+              "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+              "raw_value": "00B050",
+              "color": "00B050"
+            },
+            {
+              "person": "Regi Apriadi Putra",
+              "date": "2026-07-24",
+              "start_time": null,
+              "starts_at": "2026-07-24T04:00",
+              "task_code": "Task 2",
+              "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+              "raw_value": "FFFF00",
+              "color": "FFFF00"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-25",
+          "day": 25,
+          "events": [
+            {
+              "person": "Bagas Dwi Gustana",
+              "date": "2026-07-25",
+              "start_time": null,
+              "starts_at": "2026-07-25T04:00",
+              "task_code": "Duty",
+              "description": "Monitoring Payment, Repayment & MDR",
+              "raw_value": "FFC000",
+              "color": "FFC000"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-26",
+          "day": 26,
+          "events": [
+            {
+              "person": "Adi Sudarmadi",
+              "date": "2026-07-26",
+              "start_time": null,
+              "starts_at": "2026-07-26T04:00",
+              "task_code": "Duty",
+              "description": "Monitoring Payment, Repayment & MDR",
+              "raw_value": "FFC000",
+              "color": "FFC000"
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "date": "2026-07-27",
+          "day": 27,
+          "events": [
+            {
+              "person": "Adi Sudarmadi",
+              "date": "2026-07-27",
+              "start_time": null,
+              "starts_at": "2026-07-27T04:00",
+              "task_code": "Task 1",
+              "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+              "raw_value": "00B050",
+              "color": "00B050"
+            },
+            {
+              "person": "Bagas Dwi Gustana",
+              "date": "2026-07-27",
+              "start_time": null,
+              "starts_at": "2026-07-27T04:00",
+              "task_code": "Task 2",
+              "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+              "raw_value": "FFFF00",
+              "color": "FFFF00"
+            },
+            {
+              "person": "Regi Apriadi Putra",
+              "date": "2026-07-27",
+              "start_time": null,
+              "starts_at": "2026-07-27T04:00",
+              "task_code": "Task 3",
+              "description": "Monitoring Jira (Creation & Follow Up)",
+              "raw_value": "00B0F0",
+              "color": "00B0F0"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-28",
+          "day": 28,
+          "events": [
+            {
+              "person": "Adi Sudarmadi",
+              "date": "2026-07-28",
+              "start_time": null,
+              "starts_at": "2026-07-28T04:00",
+              "task_code": "Task 1",
+              "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+              "raw_value": "00B050",
+              "color": "00B050"
+            },
+            {
+              "person": "Bagas Dwi Gustana",
+              "date": "2026-07-28",
+              "start_time": null,
+              "starts_at": "2026-07-28T04:00",
+              "task_code": "Task 2",
+              "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+              "raw_value": "FFFF00",
+              "color": "FFFF00"
+            },
+            {
+              "person": "Regi Apriadi Putra",
+              "date": "2026-07-28",
+              "start_time": null,
+              "starts_at": "2026-07-28T04:00",
+              "task_code": "Task 3",
+              "description": "Monitoring Jira (Creation & Follow Up)",
+              "raw_value": "00B0F0",
+              "color": "00B0F0"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-29",
+          "day": 29,
+          "events": [
+            {
+              "person": "Adi Sudarmadi",
+              "date": "2026-07-29",
+              "start_time": null,
+              "starts_at": "2026-07-29T04:00",
+              "task_code": "Task 1",
+              "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+              "raw_value": "00B050",
+              "color": "00B050"
+            },
+            {
+              "person": "Bagas Dwi Gustana",
+              "date": "2026-07-29",
+              "start_time": null,
+              "starts_at": "2026-07-29T04:00",
+              "task_code": "Task 2",
+              "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+              "raw_value": "FFFF00",
+              "color": "FFFF00"
+            },
+            {
+              "person": "Regi Apriadi Putra",
+              "date": "2026-07-29",
+              "start_time": null,
+              "starts_at": "2026-07-29T04:00",
+              "task_code": "Task 3",
+              "description": "Monitoring Jira (Creation & Follow Up)",
+              "raw_value": "00B0F0",
+              "color": "00B0F0"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-30",
+          "day": 30,
+          "events": [
+            {
+              "person": "Adi Sudarmadi",
+              "date": "2026-07-30",
+              "start_time": null,
+              "starts_at": "2026-07-30T04:00",
+              "task_code": "Task 1",
+              "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+              "raw_value": "00B050",
+              "color": "00B050"
+            },
+            {
+              "person": "Bagas Dwi Gustana",
+              "date": "2026-07-30",
+              "start_time": null,
+              "starts_at": "2026-07-30T04:00",
+              "task_code": "Task 2",
+              "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+              "raw_value": "FFFF00",
+              "color": "FFFF00"
+            },
+            {
+              "person": "Regi Apriadi Putra",
+              "date": "2026-07-30",
+              "start_time": null,
+              "starts_at": "2026-07-30T04:00",
+              "task_code": "Task 3",
+              "description": "Monitoring Jira (Creation & Follow Up)",
+              "raw_value": "00B0F0",
+              "color": "00B0F0"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-31",
+          "day": 31,
+          "events": [
+            {
+              "person": "Adi Sudarmadi",
+              "date": "2026-07-31",
+              "start_time": null,
+              "starts_at": "2026-07-31T04:00",
+              "task_code": "Task 1",
+              "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+              "raw_value": "00B050",
+              "color": "00B050"
+            },
+            {
+              "person": "Bagas Dwi Gustana",
+              "date": "2026-07-31",
+              "start_time": null,
+              "starts_at": "2026-07-31T04:00",
+              "task_code": "Task 2",
+              "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+              "raw_value": "FFFF00",
+              "color": "FFFF00"
+            },
+            {
+              "person": "Regi Apriadi Putra",
+              "date": "2026-07-31",
+              "start_time": null,
+              "starts_at": "2026-07-31T04:00",
+              "task_code": "Task 3",
+              "description": "Monitoring Jira (Creation & Follow Up)",
+              "raw_value": "00B0F0",
+              "color": "00B0F0"
+            }
+          ]
+        },
+        null,
+        null
+      ]
+    ]
+  }
+}

@@ -25,6 +25,7 @@ flowchart TD
 
 - `docs/` hosts the GitHub Pages dashboard.
 - `worker/` contains the Cloudflare Worker upload API.
+- `build_calendar.py` converts `uploads/Schedule.xlsx` into `docs/data/schedule.json`.
 - `repository.py` owns SQL access.
 - `scheduler.py` rebuilds SQLite from `uploads/Schedule.xlsx` every run.
 - Flask remains available for local development only.
@@ -40,6 +41,8 @@ flowchart TD
 ├── data/
 │   └── holidays_id_2026.json
 ├── docs/
+│   ├── data/
+│   │   └── schedule.json
 │   ├── app.js
 │   ├── index.html
 │   └── style.css
@@ -209,11 +212,12 @@ It runs on schedule and can be manually triggered. Runtime flow:
 2. Install Python dependencies.
 3. Run `python scheduler.py`.
 4. Initialize SQLite.
-5. Parse `uploads/Schedule.xlsx`.
-6. Replace schedule tables.
-7. Sync holidays.
-8. Send daily summary.
-9. Send due event reminders.
+5. Build `docs/data/schedule.json` when `uploads/Schedule.xlsx` changes.
+6. Parse `uploads/Schedule.xlsx`.
+7. Replace schedule tables.
+8. Sync holidays.
+9. Send daily summary.
+10. Send due event reminders.
 
 Generated SQLite files are ignored and should never be committed.
 
@@ -225,8 +229,10 @@ Generated SQLite files are ignored and should never be committed.
 4. Enter and save the Worker URL.
 5. Upload `.xlsx` or `.csv`.
 6. Confirm the Worker commits `uploads/Schedule.xlsx`.
-7. Click `Manual Run Scheduler` or wait for the daily GitHub Actions schedule.
-8. Confirm DingTalk receives the existing message format.
+7. Confirm GitHub Actions rebuilds `docs/data/schedule.json`.
+8. Refresh GitHub Pages and confirm the calendar reads the new JSON.
+9. Click `Manual Run Scheduler` or wait for the daily GitHub Actions schedule.
+10. Confirm DingTalk receives the existing message format.
 
 ## Scheduler Logging
 

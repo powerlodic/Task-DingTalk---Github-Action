@@ -2,7 +2,10 @@ const state = {
   file: null,
   workerUrl: localStorage.getItem("workerUrl") || "",
   parsedRows: [],
+  schedule: null,
 };
+
+const SCHEDULE_JSON_URL = "data/schedule.json";
 
 const elements = {
   workerUrl: document.querySelector("#workerUrl"),
@@ -64,7 +67,11 @@ elements.clearFile.addEventListener("click", () => {
   elements.fileInput.value = "";
   updateFilePreview();
   updateStats();
-  renderCalendar(null);
+  if (state.schedule) {
+    renderSchedule(state.schedule);
+  } else {
+    renderCalendar(null);
+  }
 });
 
 elements.uploadButton.addEventListener("click", uploadSchedule);
@@ -84,6 +91,7 @@ if (lastUpload) {
 }
 
 renderCalendar(null);
+loadScheduleJson(true);
 refreshStatus();
 
 async function selectFile(file) {
@@ -107,12 +115,11 @@ async function selectFile(file) {
   if (extension === ".csv") {
     const text = await file.text();
     state.parsedRows = parseCsv(text);
-    updateStats();
+    updateStatsFromRows(state.parsedRows);
     renderCalendar(state.parsedRows);
   } else {
     state.parsedRows = [];
-    updateStats();
-    renderCalendar(null, "XLSX selected. Upload it to rebuild schedule data in GitHub Actions.");
+    showToast("XLSX selected. Upload it to rebuild the published calendar.", "success");
   }
 }
 
@@ -142,6 +149,7 @@ async function uploadSchedule() {
   elements.progressBar.style.width = "35%";
 
   try {
+    const previousGeneratedAt = state.schedule?.generated_at || "";
     const response = await fetch(`${workerUrl}/upload`, {
       method: "POST",
       body: formData,
@@ -154,14 +162,50 @@ async function uploadSchedule() {
     elements.progressBar.style.width = "100%";
     localStorage.setItem("lastUpload", payload.uploadedAt);
     elements.lastUpload.textContent = formatDateTime(payload.uploadedAt);
-    showToast("Schedule uploaded and committed to GitHub.", "success");
+    if (payload.workflowDispatched === false && payload.workflowWarning) {
+      showToast(`Schedule uploaded. Workflow warning: ${payload.workflowWarning}`, "error");
+    } else {
+      showToast("Schedule uploaded. Calendar rebuild started.", "success");
+    }
     refreshStatus();
+    pollScheduleJson(previousGeneratedAt);
   } catch (error) {
     elements.progressBar.style.width = "0";
     showToast(error.message, "error");
   } finally {
     setLoading(false);
   }
+}
+
+async function loadScheduleJson(silent = false) {
+  try {
+    const schedule = await fetchJson(`${SCHEDULE_JSON_URL}?v=${Date.now()}`);
+    state.schedule = schedule;
+    setStatsFromSchedule(schedule);
+    renderSchedule(schedule);
+    if (!silent) {
+      showToast("Published calendar loaded.", "success");
+    }
+    return schedule;
+  } catch (error) {
+    if (!silent) {
+      showToast("Calendar JSON is not available yet.", "error");
+    }
+    return null;
+  }
+}
+
+async function pollScheduleJson(previousGeneratedAt) {
+  for (let attempt = 0; attempt < 12; attempt += 1) {
+    await delay(5000);
+    const schedule = await loadScheduleJson(true);
+    if (schedule && schedule.generated_at !== previousGeneratedAt) {
+      showToast("Calendar updated from published JSON.", "success");
+      refreshStatus();
+      return;
+    }
+  }
+  showToast("Upload finished, but GitHub Pages has not published the new calendar yet.", "error");
 }
 
 async function runScheduler() {
@@ -251,7 +295,15 @@ function normalizeUrl(value) {
 }
 
 function updateStats() {
-  if (!state.parsedRows.length) {
+  if (state.schedule) {
+    setStatsFromSchedule(state.schedule);
+    return;
+  }
+  updateStatsFromRows(state.parsedRows);
+}
+
+function updateStatsFromRows(rows) {
+  if (!rows.length) {
     elements.totalEngineer.textContent = "0";
     elements.totalEvents.textContent = "0";
     elements.scheduleMonth.textContent = "-";
@@ -259,11 +311,18 @@ function updateStats() {
     return;
   }
 
-  const summary = summarizeCsvRows(state.parsedRows);
+  const summary = summarizeCsvRows(rows);
   elements.totalEngineer.textContent = summary.engineers.size;
   elements.totalEvents.textContent = summary.totalEvents;
   elements.scheduleMonth.textContent = summary.monthName || "-";
   elements.scheduleYear.textContent = summary.year || "-";
+}
+
+function setStatsFromSchedule(schedule) {
+  elements.totalEngineer.textContent = schedule.stats?.total_engineers ?? schedule.engineers?.length ?? 0;
+  elements.totalEvents.textContent = schedule.stats?.total_events ?? schedule.events?.length ?? 0;
+  elements.scheduleMonth.textContent = schedule.month_name || schedule.month || "-";
+  elements.scheduleYear.textContent = schedule.year || "-";
 }
 
 function summarizeCsvRows(rows) {
@@ -363,6 +422,70 @@ function renderCalendar(rows, message = "") {
     }
     elements.calendarGrid.append(day);
   }
+}
+
+function renderSchedule(schedule) {
+  elements.calendarGrid.innerHTML = "";
+  elements.calendarTitle.textContent = `${schedule.month_name || schedule.month} ${schedule.year}`;
+  const weeks = schedule.calendar?.weeks || buildWeeksFromEvents(schedule);
+
+  for (const week of weeks) {
+    for (const entry of week) {
+      const day = document.createElement("div");
+      if (!entry) {
+        day.className = "calendar-day muted";
+        elements.calendarGrid.append(day);
+        continue;
+      }
+
+      day.className = "calendar-day";
+      day.innerHTML = `<span class="calendar-date">${entry.day}</span>`;
+      for (const event of entry.events || []) {
+        const item = document.createElement("div");
+        item.className = "calendar-event";
+        if (event.color) {
+          item.style.borderLeftColor = `#${event.color}`;
+        }
+        item.innerHTML = [
+          `<strong>${escapeHtml(event.person)}</strong>`,
+          `<span>${escapeHtml(event.task_code)}</span>`,
+        ].join(" ");
+        day.append(item);
+      }
+      elements.calendarGrid.append(day);
+    }
+  }
+}
+
+function buildWeeksFromEvents(schedule) {
+  const grouped = new Map();
+  for (const event of schedule.events || []) {
+    const day = Number(event.date.slice(8, 10));
+    const events = grouped.get(day) || [];
+    events.push(event);
+    grouped.set(day, events);
+  }
+
+  const firstDay = new Date(Number(schedule.year), Number(schedule.month) - 1, 1);
+  const daysInMonth = new Date(Number(schedule.year), Number(schedule.month), 0).getDate();
+  const offset = (firstDay.getDay() + 6) % 7;
+  const totalCells = Math.ceil((offset + daysInMonth) / 7) * 7;
+  const weeks = [];
+  let week = [];
+
+  for (let cell = 0; cell < totalCells; cell += 1) {
+    const day = cell - offset + 1;
+    week.push(
+      day < 1 || day > daysInMonth
+        ? null
+        : { day, events: grouped.get(day) || [] },
+    );
+    if (week.length === 7) {
+      weeks.push(week);
+      week = [];
+    }
+  }
+  return weeks;
 }
 
 function groupEventsByDay(rows) {
@@ -480,4 +603,17 @@ function showToast(message, type = "success") {
   toast.textContent = message;
   elements.toastHost.append(toast);
   setTimeout(() => toast.remove(), 4200);
+}
+
+function delay(milliseconds) {
+  return new Promise((resolve) => setTimeout(resolve, milliseconds));
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
 }
