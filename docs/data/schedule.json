@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-19T07:20:11+07:00",
-  "source_commit": "50b383cfe346fb8d7815ddc44e3aa2bc59229b9f",
+  "generated_at": "2026-07-19T07:13:34+07:00",
+  "source_commit": "",
   "source_path": "uploads/Schedule.xlsx",
   "month": 7,
   "month_name": "Juli",
@@ -183,10 +183,10 @@
       "date": "2026-07-06",
       "start_time": null,
       "starts_at": "2026-07-06T04:00",
-      "task_code": "Off",
-      "description": "Off",
-      "raw_value": "FF0000",
-      "color": "FF0000"
+      "task_code": "Task 3",
+      "description": "Monitoring Jira (Creation & Follow Up)",
+      "raw_value": "00B0F0",
+      "color": "00B0F0"
     },
     {
       "person": "Adi Sudarmadi",
@@ -223,10 +223,10 @@
       "date": "2026-07-08",
       "start_time": null,
       "starts_at": "2026-07-08T04:00",
-      "task_code": "Off",
-      "description": "Off",
-      "raw_value": "FF0000",
-      "color": "FF0000"
+      "task_code": "Task 1",
+      "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+      "raw_value": "00B050",
+      "color": "00B050"
     },
     {
       "person": "Bagas Dwi Gustana",
@@ -403,10 +403,10 @@
       "date": "2026-07-15",
       "start_time": null,
       "starts_at": "2026-07-15T04:00",
-      "task_code": "Off",
-      "description": "Off",
-      "raw_value": "FF0000",
-      "color": "FF0000"
+      "task_code": "Task 3",
+      "description": "Monitoring Jira (Creation & Follow Up)",
+      "raw_value": "00B0F0",
+      "color": "00B0F0"
     },
     {
       "person": "Regi Apriadi Putra",
@@ -453,10 +453,10 @@
       "date": "2026-07-17",
       "start_time": null,
       "starts_at": "2026-07-17T04:00",
-      "task_code": "Off",
-      "description": "Off",
-      "raw_value": "FF0000",
-      "color": "FF0000"
+      "task_code": "Task 2",
+      "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+      "raw_value": "FFFF00",
+      "color": "FFFF00"
     },
     {
       "person": "Bagas Dwi Gustana",
@@ -479,7 +479,7 @@
       "color": "00B050"
     },
     {
-      "person": "Bagas Dwi Gustana",
+      "person": "Regi Apriadi Putra",
       "date": "2026-07-18",
       "start_time": null,
       "starts_at": "2026-07-18T04:00",
@@ -489,7 +489,7 @@
       "color": "FFC000"
     },
     {
-      "person": "Regi Apriadi Putra",
+      "person": "Bagas Dwi Gustana",
       "date": "2026-07-19",
       "start_time": null,
       "starts_at": "2026-07-19T04:00",
@@ -649,7 +649,7 @@
       "color": "FFFF00"
     },
     {
-      "person": "Regi Apriadi Putra",
+      "person": "Bagas Dwi Gustana",
       "date": "2026-07-25",
       "start_time": null,
       "starts_at": "2026-07-25T04:00",
@@ -1000,10 +1000,10 @@
               "date": "2026-07-06",
               "start_time": null,
               "starts_at": "2026-07-06T04:00",
-              "task_code": "Off",
-              "description": "Off",
-              "raw_value": "FF0000",
-              "color": "FF0000"
+              "task_code": "Task 3",
+              "description": "Monitoring Jira (Creation & Follow Up)",
+              "raw_value": "00B0F0",
+              "color": "00B0F0"
             }
           ]
         },
@@ -1052,10 +1052,10 @@
               "date": "2026-07-08",
               "start_time": null,
               "starts_at": "2026-07-08T04:00",
-              "task_code": "Off",
-              "description": "Off",
-              "raw_value": "FF0000",
-              "color": "FF0000"
+              "task_code": "Task 1",
+              "description": "Monitoring Camunda, Payment Extract Data, External & Internal Request (Ding, WAG, Email), Reporting Regulator, User Request (Dacor, Bisreq, Penomoran User Akses, Circulate Digital Sign)",
+              "raw_value": "00B050",
+              "color": "00B050"
             },
             {
               "person": "Bagas Dwi Gustana",
@@ -1276,10 +1276,10 @@
               "date": "2026-07-15",
               "start_time": null,
               "starts_at": "2026-07-15T04:00",
-              "task_code": "Off",
-              "description": "Off",
-              "raw_value": "FF0000",
-              "color": "FF0000"
+              "task_code": "Task 3",
+              "description": "Monitoring Jira (Creation & Follow Up)",
+              "raw_value": "00B0F0",
+              "color": "00B0F0"
             },
             {
               "person": "Regi Apriadi Putra",
@@ -1338,10 +1338,10 @@
               "date": "2026-07-17",
               "start_time": null,
               "starts_at": "2026-07-17T04:00",
-              "task_code": "Off",
-              "description": "Off",
-              "raw_value": "FF0000",
-              "color": "FF0000"
+              "task_code": "Task 2",
+              "description": "Monitoring Dashboard Metabase (Channeling, Traffic Dana, Issue, Account Bind, Monitoring Grafana & Kibana)",
+              "raw_value": "FFFF00",
+              "color": "FFFF00"
             },
             {
               "person": "Bagas Dwi Gustana",
@@ -1370,7 +1370,7 @@
           "day": 18,
           "events": [
             {
-              "person": "Bagas Dwi Gustana",
+              "person": "Regi Apriadi Putra",
               "date": "2026-07-18",
               "start_time": null,
               "starts_at": "2026-07-18T04:00",
@@ -1386,7 +1386,7 @@
           "day": 19,
           "events": [
             {
-              "person": "Regi Apriadi Putra",
+              "person": "Bagas Dwi Gustana",
               "date": "2026-07-19",
               "start_time": null,
               "starts_at": "2026-07-19T04:00",
@@ -1584,7 +1584,7 @@
           "day": 25,
           "events": [
             {
-              "person": "Regi Apriadi Putra",
+              "person": "Bagas Dwi Gustana",
               "date": "2026-07-25",
               "start_time": null,
               "starts_at": "2026-07-25T04:00",
